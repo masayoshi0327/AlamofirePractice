@@ -1,2 +1,8 @@
 <h1>こんにちは。</h1>
 <%= link_to "新規投稿", new_post_path %>
+<% @posts.each do |post| %>
+  <div>
+    <%= post.id %><span>:</span><%= post.content %>
+    <%= link_to "編集する", edit_post_path(post) %>
+  </div>
+<% end %>
